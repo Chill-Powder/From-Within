@@ -1,0 +1,648 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="Health" sid="151757961540979" static="0" type="number">100</variable>
+        <variable constant="0" name="Freezes" sid="174897221483410" static="0" type="number">2</variable>
+        <variable constant="0" name="Powerup" sid="813155988025743" static="0" type="number">0</variable>
+        <event-block sid="186549302711275">
+            <conditions>
+                <condition id="2" name="Key is down" sid="160832268844528" type="Keyboard">
+                    <param id="0" name="Key">65 (A)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="509471335132026" type="Player">
+                    <param id="0" name="X">Self.X - (300 * dt)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="499374193330701">
+            <conditions>
+                <condition id="2" name="Key is down" sid="592623632105808" type="Keyboard">
+                    <param id="0" name="Key">68 (D)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="398864718533842" type="Player">
+                    <param id="0" name="X">Self.X + (300* dt)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="977309682977142">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="402875945244498" type="Player">
+                    <param id="0" name="Object">EndGoal</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="943477783088671" type="Player">
+                    <param id="0" name="X">240</param>
+                </action>
+                <action id="-2" name="Set Y" sid="691750121259482" type="Player">
+                    <param id="0" name="Y">2380</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="419399051650957">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="798656850131590" type="System">
+                    <param id="0" name="Interval (seconds)">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="489539061105709" type="System">
+                    <param id="0" name="Object to create">AvgDebris</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="X">random(LayoutWidth)</param>
+                    <param id="3" name="Y">-50</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="827160846116154">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="769261457540248" type="Keyboard">
+                    <param id="0" name="Key">32 (Space)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="369516085888235" type="Player">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="733494418988486">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="250723001445167" type="System">
+                    <param id="0" name="Interval (seconds)">3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="849647300016687" type="System">
+                    <param id="0" name="Object to create">LrgDebris</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">random(LayoutWidth)</param>
+                    <param id="3" name="Y">-50</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="483634858084538">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="321451249798198" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="788185041209190" type="Camera">
+                    <param id="0" name="X">lerp(Self.X, Player.X, 0.03)</param>
+                    <param id="1" name="Y">lerp(Self.Y, Player.Y-150, 0.03)</param>
+                </action>
+                <action id="-2" name="Set Y" sid="948142255278572" type="Powerup">
+                    <param id="0" name="Y">Self.Y + 5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="425653241401401">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="887771656296785" type="AvgDebris">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="Y co-ordinate">801</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="918402773397296" type="AvgDebris">
+                    <param id="0" name="Instance variable">IsMoving</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="608111164227733" type="AvgDebris">
+                    <param id="0" name="Y">Self.Y + 3.5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="545419070704280">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="633242005249540" type="LrgDebris">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="Y co-ordinate">801</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="313652977723429" type="LrgDebris">
+                    <param id="0" name="Instance variable">IsMoving</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="772646220362605" type="LrgDebris">
+                    <param id="0" name="Y">Self.Y + 3.25</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="815262006527062">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="159051547918933" type="SmlDebris">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="Y co-ordinate">801</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="342753057736278" type="LrgDebris">
+                    <param id="0" name="Instance variable">IsMoving</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="945315862773593" type="SmlDebris">
+                    <param id="0" name="Y">Self.Y + 3.75</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="956296849333303">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="356221690667758" type="AvgDebris">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Y co-ordinate">801</param>
+                </condition>
+                <condition id="-2" name="Compare Y" sid="959089867942375" type="AvgDebris">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="Y co-ordinate">1601</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="701488837245324" type="AvgDebris">
+                    <param id="0" name="Instance variable">IsMoving</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="771671340675971" type="AvgDebris">
+                    <param id="0" name="Y">Self.Y + 2.05</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="454006992774119">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="923743517405816" type="LrgDebris">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Y co-ordinate">801</param>
+                </condition>
+                <condition id="-2" name="Compare Y" sid="574907661338822" type="LrgDebris">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="Y co-ordinate">1601</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="479384458864180" type="LrgDebris">
+                    <param id="0" name="Instance variable">IsMoving</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="599752390141386" type="LrgDebris">
+                    <param id="0" name="Y">Self.Y + 2.25</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="795610369335182">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="325508454561889" type="SmlDebris">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Y co-ordinate">801</param>
+                </condition>
+                <condition id="-2" name="Compare Y" sid="304870834973261" type="SmlDebris">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="Y co-ordinate">1601</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="451253996983953" type="SmlDebris">
+                    <param id="0" name="Instance variable">IsMoving</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="292100082222215" type="SmlDebris">
+                    <param id="0" name="Y">Self.Y + 1.75</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="395542843903074">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="196749507286993" type="AvgDebris">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Y co-ordinate">1601</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="627574892641981" type="AvgDebris">
+                    <param id="0" name="Instance variable">IsMoving</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="679337571124034" type="AvgDebris">
+                    <param id="0" name="Y">Self.Y + 4/5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="845095402303729">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="496412720228282" type="LrgDebris">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Y co-ordinate">1601</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="201874701219542" type="LrgDebris">
+                    <param id="0" name="Instance variable">IsMoving</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="990779372045502" type="LrgDebris">
+                    <param id="0" name="Y">Self.Y + 1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="249982048970170">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="484458403613352" type="SmlDebris">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Y co-ordinate">1601</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="917876759436108" type="SmlDebris">
+                    <param id="0" name="Instance variable">IsMoving</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="441531707537361" type="SmlDebris">
+                    <param id="0" name="Y">Self.Y + 1/2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="479019458553490">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="381732412379893" type="AvgDebris">
+                    <param id="0" name="Object">Checkpoint1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="834667404587166" type="AvgDebris" />
+            </actions>
+        </event-block>
+        <event-block sid="112931413346439">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="401530572780785" type="LrgDebris">
+                    <param id="0" name="Object">Checkpoint1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="566138352345840" type="LrgDebris" />
+            </actions>
+        </event-block>
+        <event-block sid="314065577261201">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="685377949735964" type="SmlDebris">
+                    <param id="0" name="Object">Checkpoint1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="526699287988392" type="SmlDebris" />
+            </actions>
+        </event-block>
+        <event-block sid="522323313641901">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="805948574430322" type="System">
+                    <param id="0" name="Interval (seconds)">30</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="259288487722676" type="System">
+                    <param id="0" name="Object to create">Powerup</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">random(LayoutWidth)</param>
+                    <param id="3" name="Y">-40</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="255179351654760">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="655479350684480" type="Player">
+                    <param id="0" name="Object">Powerup</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="378310578498922" type="Powerup" />
+            </actions>
+        </event-block>
+        <event-block sid="520848097234132">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="528431217479346" type="Keyboard">
+                    <param id="0" name="Key">32 (Space)</param>
+                </condition>
+                <condition behavior="Platform" id="3" name="Is jumping" sid="891364459648825" type="Player" />
+                <condition id="-8" name="Is boolean instance variable set" sid="871628148948568" type="Player">
+                    <param id="0" name="Instance variable">doubleJump</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="9" name="Set vector Y" sid="484411216440306" type="Player">
+                    <param id="0" name="Vector Y">-1000</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="363816082169274">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="713617797965022" type="Keyboard">
+                    <param id="0" name="Key">32 (Space)</param>
+                </condition>
+                <condition behavior="Platform" id="4" name="Is falling" sid="661351260926620" type="Player" />
+                <condition id="-8" name="Is boolean instance variable set" sid="463681360335387" type="Player">
+                    <param id="0" name="Instance variable">doubleJump</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="9" name="Set vector Y" sid="361742587979785" type="Player">
+                    <param id="0" name="Vector Y">-1000</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="664923554552508">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="299503188843490" type="Powerup" />
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="4" name="Set jump strength" sid="945740690264266" type="Player">
+                    <param id="0" name="Jump strength">1245</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="687000525544149">
+            <conditions />
+            <actions />
+            <sub-events>
+                <event-block sid="603252526466752">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="726584403628632" type="Keyboard">
+                            <param id="0" name="Key">32 (Space)</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="210844694605337" type="Player">
+                            <param id="0" name="Instance variable">doubleJump</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="373593614376396" type="Player">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="199172252243182">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="981518618012715" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">AvgDebris</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="760682001280010" type="System">
+                    <param id="0" name="Variable">Freezes</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="388811203480516" type="System">
+                    <param id="0" name="Variable">Freezes</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="214680831358874" type="AvgDebris">
+                    <param id="0" name="X">Self.X</param>
+                    <param id="1" name="Y">Self.Y</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="416180263436027" type="AvgDebris">
+                    <param id="0" name="Instance variable">IsMoving</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="743266148527663" type="System">
+                    <param id="0" name="Variable">Freezes</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="735113172493214" type="Freezes">
+                    <param id="0" name="Text">&quot;Freezes: &quot; &amp; Freezes</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="330452261386669" type="AvgDebris">
+                    <param id="0" name="Instance variable">IsFrozen</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="825254116693677">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="508638172780350" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">LrgDebris</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="572691738781174" type="System">
+                    <param id="0" name="Variable">Freezes</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="758674126495297" type="System">
+                    <param id="0" name="Variable">Freezes</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="951849892802060" type="LrgDebris">
+                    <param id="0" name="X">Self.X</param>
+                    <param id="1" name="Y">Self.Y</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="619407535321115" type="LrgDebris">
+                    <param id="0" name="Instance variable">IsMoving</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="464757441965570" type="System">
+                    <param id="0" name="Variable">Freezes</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="846850917471019" type="Freezes">
+                    <param id="0" name="Text">&quot;Freezes: &quot; &amp; Freezes</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="163411943207230" type="LrgDebris">
+                    <param id="0" name="Instance variable">IsFrozen</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="368000474338081">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="175069717657564" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">SmlDebris</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="966258956489425" type="System">
+                    <param id="0" name="Variable">Freezes</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="623199833134761" type="System">
+                    <param id="0" name="Variable">Freezes</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="554599430111688" type="SmlDebris">
+                    <param id="0" name="X">Self.X</param>
+                    <param id="1" name="Y">Self.Y</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="347736577236671" type="SmlDebris">
+                    <param id="0" name="Instance variable">IsMoving</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="397236845536753" type="System">
+                    <param id="0" name="Variable">Freezes</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="241462553417979" type="Freezes">
+                    <param id="0" name="Text">&quot;Freezes: &quot; &amp; Freezes</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="953380453700066" type="SmlDebris">
+                    <param id="0" name="Instance variable">IsFrozen</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="429120147115755">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="149233944746671" type="Player">
+                    <param id="0" name="Object">AvgDebris</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="901087992885963" type="AvgDebris">
+                    <param id="0" name="Instance variable">IsFrozen</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="544000316691946" type="System">
+                    <param id="0" name="Variable">Freezes</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="969082147868257" type="System">
+                    <param id="0" name="Variable">Freezes</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="178052877063748" type="System">
+                    <param id="0" name="Variable">Freezes</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="903403960958063" type="Freezes">
+                    <param id="0" name="Text">&quot;Freezes: &quot; &amp; Freezes</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="466067763045195">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="945769526851745" type="Player">
+                    <param id="0" name="Object">LrgDebris</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="294478091778221" type="LrgDebris">
+                    <param id="0" name="Instance variable">IsFrozen</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="370545551726717" type="System">
+                    <param id="0" name="Variable">Freezes</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="733553197906285" type="System">
+                    <param id="0" name="Variable">Freezes</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="844895199343247" type="System">
+                    <param id="0" name="Variable">Freezes</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="272961548976512" type="Freezes">
+                    <param id="0" name="Text">&quot;Freezes: &quot; &amp; Freezes</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="190604314361944">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="282487279010293" type="Player">
+                    <param id="0" name="Object">SmlDebris</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="969004771608567" type="SmlDebris">
+                    <param id="0" name="Instance variable">IsFrozen</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="265561732675287" type="System">
+                    <param id="0" name="Variable">Freezes</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="633516152423639" type="System">
+                    <param id="0" name="Variable">Freezes</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="761856392997349" type="System">
+                    <param id="0" name="Variable">Freezes</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="132920071951926" type="Freezes">
+                    <param id="0" name="Text">&quot;Freezes: &quot; &amp; Freezes</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="201786613119350">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="714146575201357" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="289741859655949" type="System">
+                    <param id="0" name="Object to create">Species</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">random(LayoutWidth)</param>
+                    <param id="3" name="Y">random(0, 800)</param>
+                </action>
+                <action id="-3" name="Create object" sid="184980679284901" type="System">
+                    <param id="0" name="Object to create">Species</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">random(LayoutWidth)</param>
+                    <param id="3" name="Y">random(801, 1600)</param>
+                </action>
+                <action id="-3" name="Create object" sid="361231820990311" type="System">
+                    <param id="0" name="Object to create">Species</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">random(LayoutWidth)</param>
+                    <param id="3" name="Y">random(1601, 2400)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="453112269535827">
+                    <conditions>
+                        <condition id="-12" name="Repeat" sid="803058868735243" type="System">
+                            <param id="0" name="Count">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="359788588855536" type="System">
+                            <param id="0" name="Object to create">Treasure</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">random(LayoutWidth)</param>
+                            <param id="3" name="Y">random(LayoutHeight)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="236188360167379">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="911308850650585" type="Player">
+                    <param id="0" name="Object">Species</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="744575599934052" type="Species" />
+            </actions>
+        </event-block>
+        <event-block sid="402492398885002">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="848001083245049" type="Player">
+                    <param id="0" name="Object">Treasure</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="863999296791027" type="Treasure" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

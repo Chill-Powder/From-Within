@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>New project</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>o0fg40rl89mp</unique-id>
+    <saved-with-version>23300</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="jumpthru" version="1">Jump-thru</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>480</width>
+        <height>800</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="LavaBG" sid="641937974775596">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\Cole\Downloads\lava background.jpg" />
+        </object-type>
+        <object-type name="BG" sid="864244778436649">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\Cole\Downloads\lava background.jpg" />
+        </object-type>
+        <object-type name="Player" sid="375303210799159">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="doubleJump" sid="938931856517198" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="BoundToLayout" sid="781053539947655">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="Platform" sid="489672366523602">
+                    <behavior id="Platform" />
+                </behavior-type>
+                <behavior-type name="Jumpthru" sid="171019326023332">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="889704869215226" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.509434" original-source="C:\Users\Cole\Downloads\Catch the Animal Graphics Pack\Catch the Animal Graphics Pack\penguin.png">
+                        <collision-poly>
+                            <point x="0.0192308" y="0.0188679" />
+                            <point x="0.5" y="0" />
+                            <point x="0.980769" y="0.0188679" />
+                            <point x="1" y="0.490566" />
+                            <point x="0.980769" y="0.981132" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0192308" y="0.981132" />
+                            <point x="0" y="0.490566" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="AvgDebris" sid="262549297030136">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="IsMoving" sid="944077332232959" type="boolean" />
+                <instance-variable name="IsFrozen" sid="646082146837871" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Solid" sid="368759085204196">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="172348906247002" speed="5">
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Cole\Downloads\Catch the Animal Graphics Pack\Catch the Animal Graphics Pack\obstacle.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.0625" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Keyboard" sid="175722881952384">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Mouse" sid="887393801090048">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Sprite" sid="406721953549875">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="589647727348151" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite2" sid="540155070767692">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="718573662862722" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="EndGoal" sid="775253736646030">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Jumpthru" sid="652303202312219">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="262202478504523" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cole\Downloads\Catch the Animal Graphics Pack\Catch the Animal Graphics Pack\coin.png">
+                        <collision-poly>
+                            <point x="0.148649" y="0.148649" />
+                            <point x="0.5" y="0" />
+                            <point x="0.851351" y="0.148649" />
+                            <point x="1" y="0.5" />
+                            <point x="0.864865" y="0.864865" />
+                            <point x="0.5" y="1" />
+                            <point x="0.148649" y="0.851351" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Score" sid="785990395324577">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Jumpthru" sid="607711774890825">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="Water" sid="897507229098855">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="420591605663304" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502793" original-source="C:\Users\Cole\Downloads\Catch the Animal Graphics Pack\Catch the Animal Graphics Pack\table.png">
+                        <collision-poly>
+                            <point x="0.0729167" y="0.234637" />
+                            <point x="0.5" y="0" />
+                            <point x="0.927083" y="0.234637" />
+                            <point x="1" y="0.497207" />
+                            <point x="0.927083" y="0.765363" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0729167" y="0.765363" />
+                            <point x="0" y="0.497207" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite4" sid="828476079174652">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="722895143476385" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cole\Downloads\Catch the Animal Graphics Pack\Catch the Animal Graphics Pack\TryAgainMessage.png">
+                        <collision-poly>
+                            <point x="0.0561224" y="0.323529" />
+                            <point x="0.96301" y="0.213235" />
+                            <point x="0.971939" y="0.5" />
+                            <point x="0.917092" y="0.522059" />
+                            <point x="0.057398" y="0.669118" />
+                            <point x="0.526786" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Checkpoint1" sid="360530486243162">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="331829695734228">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="725740481589729" speed="5">
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Cole\Downloads\Catch the Animal Graphics Pack\Catch the Animal Graphics Pack\obstacle.png">
+                        <collision-poly>
+                            <point x="0.0133333" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="LrgDebris" sid="166291615685783">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="IsMoving" sid="443585826924769" type="boolean" />
+                <instance-variable name="IsFrozen" sid="456340363113555" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Solid" sid="933907955494735">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="197771359191024" speed="5">
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Cole\Downloads\Catch the Animal Graphics Pack\Catch the Animal Graphics Pack\obstacle.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="SmlDebris" sid="674096775632997">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="IsMoving" sid="621042020389614" type="boolean" />
+                <instance-variable name="IsFrozen" sid="674341287293453" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Solid" sid="255269268133225">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="337650174155777" speed="5">
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Cole\Downloads\Catch the Animal Graphics Pack\Catch the Animal Graphics Pack\obstacle.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Camera" sid="730114346301980">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="ScrollTo" sid="139302334653195">
+                    <behavior id="scrollto" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="928705243982550" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Checkpoint3" sid="402693837400494">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Jumpthru" sid="721422695786442">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="988753399382250" speed="5">
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Cole\Downloads\Catch the Animal Graphics Pack\Catch the Animal Graphics Pack\obstacle.png">
+                        <collision-poly>
+                            <point x="0.0133333" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Checkpoint2" sid="128282644135360">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Jumpthru" sid="249619491493821">
+                    <behavior id="jumpthru" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="222783897867617" speed="5">
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="C:\Users\Cole\Downloads\Catch the Animal Graphics Pack\Catch the Animal Graphics Pack\obstacle.png">
+                        <collision-poly>
+                            <point x="0.0133333" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Powerup" sid="913421810349112">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="396133017692578" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.507937" original-source="C:\Users\Cole\Downloads\Catch the Animal Graphics Pack\Catch the Animal Graphics Pack\powerup_green.png">
+                        <collision-poly>
+                            <point x="0.16129" y="0.15873" />
+                            <point x="0.5" y="0.015873" />
+                            <point x="0.854839" y="0.142857" />
+                            <point x="0.983871" y="0.492063" />
+                            <point x="0.83871" y="0.84127" />
+                            <point x="0.5" y="0.968254" />
+                            <point x="0.16129" y="0.84127" />
+                            <point x="0.0322581" y="0.492063" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Freezes" sid="970136598772255">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Species" sid="610412793670511">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="520278496893858" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.509434" original-source="C:\Users\Cole\Downloads\Catch the Animal Graphics Pack\Catch the Animal Graphics Pack\hippo.png">
+                        <collision-poly>
+                            <point x="0.0576923" y="0.0566038" />
+                            <point x="0.5" y="0.0943396" />
+                            <point x="0.942308" y="0.0566038" />
+                            <point x="0.903846" y="0.90566" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0961538" y="0.90566" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Treasure" sid="725648200170555">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="818642663247013" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Cole\Downloads\Shmup_Graphics_Pack\projectile.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0" />
+                            <point x="0.9" y="0.9" />
+                            <point x="0.5" y="1" />
+                            <point x="0.2" y="0.8" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Health" sid="162418162722721">
+            <plugin id="Text" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Layout 1.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="3" />
+        <global-instance type="Mouse" uid="4" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>
